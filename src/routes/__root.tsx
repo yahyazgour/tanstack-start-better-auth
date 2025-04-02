@@ -20,9 +20,7 @@ type RootRouteContext = {
 export const Route = createRootRouteWithContext<{
   queryClient: QueryClient;
 }>()({
-  beforeLoad: ({ context }) => {
-    return { session: context.queryClient.fetchQuery(sessionQuery()) };
-  },
+  beforeLoad: ({}) => {},
   loader: ({ context }) => {
     prefetchSession({ queryClient: context.queryClient });
   },
